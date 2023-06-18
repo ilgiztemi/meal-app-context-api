@@ -10,38 +10,38 @@ import { useNavigation } from '@react-navigation/native';
 
 import MealDetails from '../MealDetails';
 
-function MealItem({
+function MealItem( {
   id,
   title,
   imageUrl,
   duration,
   complexity,
   affordability,
-}) {
+} ) {
   const navigation = useNavigation();
 
   function selectMealItemHandler() {
-    navigation.navigate('MealDetail', {
+    navigation.navigate( 'MealDetail', {
       mealId: id,
-    });
+    } );
   }
 
   return (
-    <View style={styles.mealItem}>
+    <View style={ styles.mealItem }>
       <Pressable
-        android_ripple={{ color: '#ccc' }}
-        style={({ pressed }) => (pressed ? styles.buttonPressed : null)}
-        onPress={selectMealItemHandler}
+        android_ripple={ { color: '#ccc' } }
+        style={ ( { pressed } ) => ( pressed ? styles.buttonPressed : null ) }
+        onPress={ selectMealItemHandler }
       >
-        <View style={styles.innerContainer}>
+        <View style={ styles.innerContainer }>
           <View>
-            <Image source={{ uri: imageUrl }} style={styles.image} />
-            <Text style={styles.title}>{title}</Text>
+            <Image source={ { uri: imageUrl } } style={ styles.image } />
+            <Text style={ styles.title }>{ title }</Text>
           </View>
           <MealDetails
-            duration={duration}
-            affordability={affordability}
-            complexity={complexity}
+            duration={ duration }
+            affordability={ affordability }
+            complexity={ complexity }
           />
         </View>
       </Pressable>
@@ -51,7 +51,7 @@ function MealItem({
 
 export default MealItem;
 
-const styles = StyleSheet.create({
+const styles = StyleSheet.create( {
   mealItem: {
     margin: 16,
     borderRadius: 8,
@@ -80,4 +80,4 @@ const styles = StyleSheet.create({
     fontSize: 18,
     margin: 8,
   },
-});
+} );
